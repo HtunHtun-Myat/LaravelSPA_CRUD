@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="_token" content="{!! csrf_token() !!}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
@@ -39,11 +40,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($users as $user)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
+                            <th scope="row">{{ $user->id }}</th>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ date('d-m-Y', strtotime($user->created_at)) }}</td>
                             <td>
                                 <div class="actions">
                                     <button class="btn btn-success" data-toggle="modal" data-target="#edit-user-modal">
@@ -56,173 +58,13 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">10</th>
-                            <td>Mg Mg</td>
-                            <td>mgmg@gmail.com</td>
-                            <td>Dec 25, 2021</td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-success" data-toggle="modal"
-                                        data-target="#create-user-modal">
-                                        Edit
-                                    </button>
-                                    <button class="btn btn-danger ml-2" data-toggle="modal"
-                                        data-target="#delete-user-modal">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
 
                 <!-- Pagination -->
-                <nav class="mt-5">
+                {{ $users->links() }}
+                {{-- <nav class="mt-5">
                     <ul class="pagination">
                         <li class="page-item disabled">
                             <a class="page-link">Previous</a>
@@ -236,106 +78,22 @@
                             <a class="page-link" href="#">Next</a>
                         </li>
                     </ul>
-                </nav>
+                </nav> --}}
             </div>
             <!-- .col-12 -->
         </div>
     </div>
 
     <!-- Create User Modal-->
-    <div class="modal fade" id="create-user-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Create User</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label class="col-form-label">Name:</label>
-                            <input type="text" class="form-control is-invalid" />
-                            <div class="invalid-feedback">
-                                The name is required.
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label">Email:</label>
-                            <input type="email" class="form-control is-invalid" />
-                            <div class="invalid-feedback">
-                                The email is required.
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Create</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('_create')
     <!-- End: Create User Modal-->
 
     <!-- Edit User Modal-->
-    <div class="modal fade" id="edit-user-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit User</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label class="col-form-label">Name:</label>
-                            <input type="text" class="form-control is-invalid" />
-                            <div class="invalid-feedback">
-                                The name is required.
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label">Email:</label>
-                            <input type="email" class="form-control is-invalid" />
-                            <div class="invalid-feedback">
-                                The email is required.
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Update</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('_edit')
     <!-- End: Edit User Modal-->
 
     <!-- Delete User Modal-->
-    <div class="modal fade" id="delete-user-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Confirm Delete</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure to delete a user?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('_delete')
     <!-- End: Delete User Modal-->
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -344,6 +102,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="/user/user.js"></script>
 </body>
 
 </html>
